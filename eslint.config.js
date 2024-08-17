@@ -34,18 +34,18 @@ export default [
     rules: {
       "prettier/prettier": "error",
       // https://eslint.vuejs.org/rules/
-      "vue/max-attributes-per-line": [2, {
+      "vue/max-attributes-per-line": ["error", {
         "singleline": 10,
         "multiline": {
           "max": 1,
           "allowFirstLine": false
         }
       }],
-      "vue/singleline-html-element-content-newline": 0,
-      "vue/multiline-html-element-content-newline": 0,
-      "vue/component-definition-name-casing": [2, "PascalCase"],
-      "vue/no-v-html": 0,
-      "vue/multi-word-component-names": 0,
+      "vue/singleline-html-element-content-newline": "error",
+      "vue/multiline-html-element-content-newline": "error",
+      "vue/component-definition-name-casing": ["error", "PascalCase"],
+      "vue/no-v-html": "error",
+      "vue/multi-word-component-names": "off",
       // https://eslint.org/docs/latest/rules/
       "accessor-pairs": 0,
       "camelcase": [0, { 'properties': 'always' }],
