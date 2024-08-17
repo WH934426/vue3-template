@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   tabWidth: 2, // 缩进
   useTabs: true, // 缩进方式
   semi: false, // 语句结尾是否加分号

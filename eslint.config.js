@@ -1,6 +1,8 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import pluginVue from "eslint-plugin-vue";
+import eslintConfigPrettier from "eslint-config-prettier";
+import eslintPluginPrettierRecommended  from 'eslint-plugin-prettier/recommended'
 
 // https://eslint.org/docs/latest/use/getting-started
 export default [
@@ -21,6 +23,8 @@ export default [
   // 共享插件
   pluginJs.configs.recommended,
   ...pluginVue.configs["flat/essential"],
+  eslintConfigPrettier,
+  eslintPluginPrettierRecommended,
   // 忽略文件
   {
     ignores: ["src/assets", "public", "dist"]
@@ -28,6 +32,7 @@ export default [
   // 规则
   {
     rules: {
+      "prettier/prettier": "error",
       // https://eslint.vuejs.org/rules/
       "vue/max-attributes-per-line": [2, {
         "singleline": 10,
