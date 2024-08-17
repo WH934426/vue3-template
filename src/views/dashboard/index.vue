@@ -1,9 +1,7 @@
 <script setup></script>
 
 <template>
-	<div id="app">
-		<router-view />
-	</div>
+	<div>首页</div>
 </template>
 
 <style lang="scss" scoped></style>
