@@ -43,8 +43,6 @@ export default [
 					},
 				},
 			],
-			'vue/singleline-html-element-content-newline': 'error',
-			'vue/multiline-html-element-content-newline': 'error',
 			'vue/component-definition-name-casing': ['error', 'PascalCase'],
 			'vue/no-v-html': 'error',
 			'vue/multi-word-component-names': 'off',
