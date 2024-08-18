@@ -3,6 +3,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router, { addAnyRoute } from './router'
 import store from './stores'
+import 'virtual:svg-icons-register' // svg-icon 插件
 
 const app = createApp(App)
 // 路由配置
