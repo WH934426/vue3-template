@@ -21,14 +21,15 @@
 	"license": "ISC",
 	"dependencies": {
 		"@element-plus/icons-vue": "^2.3.1",
+		"axios": "^1.7.4",
 		"element-plus": "^2.8.0",
 		"js-cookie": "^3.0.5",
+		"mockjs": "^1.1.0",
 		"normalize.css": "^8.0.1",
 		"nprogress": "0.2.0",
 		"pinia": "^2.2.2",
 		"vue": "^3.4.38",
-		"vue-router": "^4.4.3",
-		"mockjs": "^1.1.0"
+		"vue-router": "^4.4.3"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^19.4.0",
