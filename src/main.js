@@ -1,4 +1,5 @@
 import 'normalize.css/normalize.css' // 清除默认样式
+import '@/styles/index.scss' // 全局样式
 import { createApp } from 'vue'
 import App from './App.vue'
 import router, { addAnyRoute } from './router'
