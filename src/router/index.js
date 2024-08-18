@@ -1,6 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { constantRoutes, dynamicRoutes } from './routes'
-import { addRouteGuards } from './permission'
 
 const router = createRouter({
 	history: createWebHashHistory(),
@@ -24,10 +23,6 @@ export const addDynamicRoutesToLayout = () => {
 }
 
 addDynamicRoutesToLayout()
-
-// 添加路由守卫
-// TODO: 路由守卫不起作用
-addRouteGuards(router)
 
 /**
  * 添加任意路由
