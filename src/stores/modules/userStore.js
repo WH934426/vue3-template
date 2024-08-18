@@ -10,6 +10,7 @@ export const useUserStore = defineStore('user', {
 		Login() {},
 		Logout() {},
 		getUserinfo() {},
+		removeUserinfo() {},
 	},
 	getters: {
 		hasToken: (state) => state.token,
