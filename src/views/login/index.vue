@@ -1,12 +1,16 @@
 <script setup>
 import { ref } from 'vue'
 import { validUsername } from '@/utils/validate'
+import { useUserStore } from '@/stores'
+import { useRouter } from 'vue-router'
 
+// 表单对象
 const loginFormRef = ref()
 const loginForm = ref({
 	username: '',
 	password: '',
 })
+// 自定义校验规则
 const validateUsername = (_, value, callback) => {
 	if (!validUsername(value)) {
 		callback(new Error('请输入正确的用户名'))
@@ -14,7 +18,7 @@ const validateUsername = (_, value, callback) => {
 		callback()
 	}
 }
-
+// 校验规则
 const loginRules = ref({
 	username: [{ required: true, trigger: 'blur', message: '请输入用户名' }, { validator: validateUsername }],
 	password: [
@@ -25,8 +29,23 @@ const loginRules = ref({
 
 // 加载状态
 const loading = ref(false)
+// 重定向
+const redirect = ref(undefined)
 // 登录
-const handleLogin = () => {}
+const userStore = useUserStore()
+const router = useRouter()
+const handleLogin = () => {
+	loginFormRef.value.validate(async (valid) => {
+		if (valid) {
+			loading.value = true
+			await userStore.Login(loginForm.value)
+			await router.push({ path: redirect.value || '/' })
+			loading.value = false
+		} else {
+			return false
+		}
+	})
+}
 </script>
 
 <template>

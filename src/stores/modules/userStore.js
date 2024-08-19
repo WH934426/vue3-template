@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
-import { getToken } from '@/utils/auth'
+import { getToken, setToken } from '@/utils/auth'
+import { userLoginAPI } from '@/api/user'
 
 export const useUserStore = defineStore('user', {
 	state: () => ({
@@ -7,7 +8,13 @@ export const useUserStore = defineStore('user', {
 		userinfo: {},
 	}),
 	actions: {
-		Login() {},
+		async Login(data) {
+			// 登录
+			const res = await userLoginAPI(data)
+			console.log(res)
+			this.token = res.data.token
+			setToken(res.data.token)
+		},
 		Logout() {},
 		getUserinfo() {},
 	},
