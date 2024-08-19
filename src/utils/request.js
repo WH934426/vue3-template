@@ -3,15 +3,15 @@ import { ElMessage } from 'element-plus'
 import { useUserStore } from '@/stores'
 //创建axios实例
 const request = axios.create({
-	baseURL: import.meta.env.VITE_APP_BASE_API,
+	baseURL: import.meta.env.VITE_BASE_API,
 	timeout: 5000,
 })
 //请求拦截器
 request.interceptors.request.use((config) => {
 	const userStore = useUserStore()
-	const hasToken = userStore.getters.hasToken
+	const hasToken = userStore.hasToken
 	if (hasToken) {
-		config.headers['Authorization'] = userStore.getToken
+		config.headers['Authorization'] = `Bearer ${hasToken}`
 	}
 	return config
 })
